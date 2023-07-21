@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .dodo-container {
+    @apply w-full max-w-6xl mx-auto;
+  }
+
+  .dodo-grid {
+    @apply grid grid-cols-12 gap-4;
+  }
+
+  .dodo-box {
+    @apply bg-background-500 shadow rounded-lg overflow-hidden;
+  }
+
+  .dodo-heading-primary {
+    @apply text-xl font-semibold;
+  }
+
+  .dodo-link {
+    @apply text-primary-500 hover:underline;
+  }
+
+  .dodo-btn {
+    @apply py-1 px-2 rounded-md font-medium;
+  }
+
+
+  .dodo-btn-primary {
+    @apply  bg-primary-500 text-white  px-4;
+  }
+
+  .dodo-btn-secondary {
+    @apply bg-background-400 hover:bg-background-300;
+  }
+
+  .dodo-btn-muted {
+    @apply bg-background-400 hover:bg-background-300;
+  }
+
+  .dodo-btn-outline {
+    @apply border ;
+  }
+
+  .dodo-input {
+    @apply py-2 px-4 rounded-md bg-background-400 outline-none;
+  }
+
+}
+
+
+@layer base {
+  body {
+    @apply bg-background-600 text-zinc-300;
+  }
+}
