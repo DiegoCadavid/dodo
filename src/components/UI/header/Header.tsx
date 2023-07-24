@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeaderUser from "./HeaderUser";
 
 const Header = ({}) => {
   return (
@@ -13,30 +14,11 @@ const Header = ({}) => {
             <input
               type="text"
               placeholder="Search something..."
-              className="h-10 w-56 rounded-full bg-background-300 px-4 text-sm text-white outline-none"
+              className="h-10 w-56 rounded-full bg-background-400 px-4 text-sm text-white outline-none"
             />
           </form>
-          <div className="flex items-center gap-2">
-            <img
-              src="https://res.cloudinary.com/dd4p0ksdu/image/upload/v1688957902/boadqmqfzmgruxo4ynij.png"
-              alt="user image"
-              className="h-10 w-10 rounded-lg"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-4 w-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </div>
+
+          <HeaderUser />  
         </div>
       </div>
     </header>

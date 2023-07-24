@@ -5,7 +5,9 @@ import Layout from "@/components/UI/layouts/Layout";
 import UserProfile from "@/components/pages/shared/user/UserProfile";
 import WhoFollow from "@/components/pages/shared/who-follow/WhoFollow";
 
+
 export default function Home() {
+
   return (
     <Layout>
       <main className="dodo-grid dodo-container mt-4">

@@ -1,16 +1,22 @@
-import Layout from "@/components/UI/layouts/Layout";
-import LoginForm from "@/components/pages/auth/login/LoginForm";
+import RegisterForm from "@/components/pages/auth/register/RegisterForm";
 import Link from "next/link";
 
-const Login = ({}) => {
+const register = ({}) => {
   return (
     <div className="flex min-h-screen">
+      <div className="flex-1">
+        {/* Image */}
+        <img
+          src="https://pictures-omega.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdd4p0ksdu%2Fimage%2Fupload%2Fv1689924033%2Fvrbsymipcskztvmktbfy.webp&w=1920&q=75"
+          className="h-full w-full object-cover"
+        />
+      </div>
       <div className="flex flex-1 flex-col items-center justify-center">
         <div className="w-full max-w-sm">
           <h1 className="text-2xl font-bold text-primary-500">Dodo</h1>
-          <p className="text-xl mb-8">Welcome back! 👋</p>
+          <p className="text-xl">Just one step! ✨</p>
 
-          <LoginForm />
+          <RegisterForm />
 
           <div className="my-6 flex items-center gap-4">
             <div className="h-0.5 w-full flex-1 bg-background-400"></div>
@@ -28,23 +34,15 @@ const Login = ({}) => {
           </div>
 
           <p className="mt-4  text-zinc-300">
-            You no have account?{" "}
-            <Link href="/auth/register" className="text-primary-500">
-              Register
+            You have account?{" "}
+            <Link href="/auth/login" className="text-primary-500">
+              Login
             </Link>{" "}
           </p>
         </div>
-      </div>
-
-      <div className="flex-1">
-        {/* Image */}
-        <img
-          src="https://pictures-omega.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdd4p0ksdu%2Fimage%2Fupload%2Fv1689906694%2Ft6ci3loggyc3inozcyen.webp&w=1920&q=75"
-          className="h-full w-full object-cover"
-        />
       </div>
     </div>
   );
 };
 
-export default Login;
+export default register;
