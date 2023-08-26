@@ -3,6 +3,7 @@ import { type NextApiRequest, type NextApiResponse } from "next";
 import { prisma } from "@/server/db";
 import * as bcrypt from "bcrypt";
 import exclude from "@/utils/exclude";
+import axios, { isAxiosError } from "axios";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -13,7 +14,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const dataSchema = z.object({
-      username: z.string().trim().min(3).max(20),
+      username: z.string().trim().min(3).max(20).regex(/^[a-zA-Z0-9_]+$/g),
       email: z.string().trim().email(),
       password: z.string().trim().min(8).max(20),
     });

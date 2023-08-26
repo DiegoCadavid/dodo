@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { useState } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
+import { useRouter } from "next/router";
 
 import { type User } from "@/types";
 import axios from "axios";
@@ -23,6 +24,8 @@ const LoginForm = ({}) => {
     formState: { errors },
   } = useForm<FormInputs>();
 
+  const router = useRouter();
+
   const onSubmit: SubmitHandler<FormInputs> = async (formData) => {
     try {
       setIsLoading(true);
@@ -35,8 +38,7 @@ const LoginForm = ({}) => {
       });
 
       setData(login.data);
-      sessionStorage.setItem("user",JSON.stringify(login.data.user));
-      window.location.href = "/";
+      void router.push("/");
     } catch (error) {
       if (axios.isAxiosError<{ msg: string }>(error)) {
         setError(error.response?.data.msg || null);
@@ -65,8 +67,14 @@ const LoginForm = ({}) => {
             placeholder="Enter your email"
             className="dodo-input"
             {...register("email", {
-              required: true,
-              pattern: /^\S+@\S+$/i,
+              required: {
+                value: true,
+                message: "Email is required"
+              },
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Invalid email address"
+              },
             })}
           />
         </div>

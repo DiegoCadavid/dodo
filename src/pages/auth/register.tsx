@@ -14,7 +14,7 @@ const register = ({}) => {
       <div className="flex flex-1 flex-col items-center justify-center">
         <div className="w-full max-w-sm">
           <h1 className="text-2xl font-bold text-primary-500">Dodo</h1>
-          <p className="text-xl">Just one step! ✨</p>
+          <p className="text-xl mb-8">Just one step! ✨</p>
 
           <RegisterForm />
 

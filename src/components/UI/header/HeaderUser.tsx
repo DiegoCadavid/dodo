@@ -29,7 +29,7 @@ const HeaderUser = ({}) => {
           </svg>
           Profile
         </Link>
-        <Link href="/auth/logout" className="flex items-center gap-2 px-4 py-2 hover:bg-background-300 hover:text-red-500">
+        <Link href="/api/auth/logout" className="flex items-center gap-2 px-4 py-2 hover:bg-background-300 hover:text-red-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
